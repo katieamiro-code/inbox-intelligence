@@ -1,4 +1,27 @@
 print ("Inbox Itelligence is starting...")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 email_text=input("paste an email here:") 
 print("Email received:", email_text)           
 if "order" in email_text.lower():
