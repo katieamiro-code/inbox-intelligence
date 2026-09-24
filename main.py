@@ -18,10 +18,6 @@ print ("Inbox Itelligence is starting...")
 
 
 
-
-
-
-
 email_text=input("paste an email here:") 
 print("Email received:", email_text)           
 if "order" in email_text.lower():
@@ -29,7 +25,7 @@ if "order" in email_text.lower():
      
 elif "payment" in email_text.lower():
  print("category: Bill/Payment") 
-elif "urgent" in email_text.lower():
+elif any(word in email_text.lower() for word in ["urgent","important","deadline", "appointment", "asap"]):
  print("category: Urgent")
 else:
   print("category: other")
