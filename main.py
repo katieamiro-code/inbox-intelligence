@@ -1,31 +1,20 @@
-print ("Inbox Itelligence is starting...")
+def categorize_email(email_text):
+    text = email_text.lower()
+    if "order" in text:
+        return "Order/Shipping"
+    if "payment" in text:
+        return "Bill/Payment"
+    if any(word in text for word in ("urgent", "important", "deadline", "appointment", "asap")):
+        return "Urgent"
+    return "other"
 
 
+def main():
+    print("Inbox Intelligence is starting...")
+    email_text = input("Paste an email here: ")
+    print("Email received:", email_text)
+    print("Category:", categorize_email(email_text))
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-email_text=input("paste an email here:") 
-print("Email received:", email_text)           
-if "order" in email_text.lower():
-    print("Category: Order/Shipping")      
-     
-elif "payment" in email_text.lower():
- print("category: Bill/Payment") 
-elif any(word in email_text.lower() for word in ["urgent","important","deadline", "appointment", "asap"]):
- print("category: Urgent")
-else:
-  print("category: other")
+if __name__ == "__main__":
+    main()
